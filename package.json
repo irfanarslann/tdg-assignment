@@ -6,9 +6,10 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
-    "www" : "npm start --prefix www",
-    "dev" : "concurrently \"npm run server\" \"npm run www\"",
-    "heroku-postbuild": "cd www && npm install && npm install --only-dev --no-shrinkwrap && npm run build"
+    "client": "npm start --prefix www",
+    "clientinstall": "npm install --prefix www",
+    "dev": "concurrently \"npm run server\" \"npm run www\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix www && npm run build --prefix www"
   },
   "author": "Irfan Arslan",
   "license": "MIT",
