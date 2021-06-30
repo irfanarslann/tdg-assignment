@@ -5,9 +5,9 @@ const app = express();
 app.use("/api/data", require("./routes/wave"));
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("www/build"));
+  app.use(express.static(path.join(__dirname, "www/build")));
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "www", "build", "index.html"));
+    res.sendFile(path.join(__dirname, "www/build", "index.html"));
   });
 }
 
