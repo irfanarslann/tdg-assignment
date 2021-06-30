@@ -1,22 +1,28 @@
-# dtg-assignment
-
+# DTG
 ### Projede kullanilan teknoloji ve diller:
 
--Gelistirme dili olarak Javascript kullanildi;
--Frontend kisminda React.js kullanildi;
--Backend kisminda Node.js Express kullanildi;
+-Gelistirme dili olarak Javascript kullanildi.
+
+-Frontend kisminda React.js kullanildi.
+
+-Backend kisminda Node.js Express kullanildi.
 
 ### Frontend kisminda kullanilan araclar ve kutuphaneler: 
 
 -Google Fonts;
+
 -Font Awesome;
+
 -Bootstrap;
+
 -Axios (Http request icin);
 
 ### Backend kisminda kullanilan araclar ve kutuphaneler
 
 -Express.js;
+
 -Nodemon;
+
 -Concurrently;
 
 -Hosting: Heroku;
