@@ -1,6 +1,6 @@
 # dtg-assignment
 
-1 :Projede kullanilan teknoloji ve diller:
+### :Projede kullanilan teknoloji ve diller:
 
 -Gelistirme dili olarak Javascript kullanildi
 -Frontend kisminda React.js kullanildi
