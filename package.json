@@ -1,0 +1,22 @@
+{
+  "name": "tdg-project",
+  "version": "1.0.0",
+  "description": "TDG Project for job interview",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "www" : "npm start --prefix www",
+    "dev" : "concurrently \"npm run server\" \"npm run www\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix www && npm run build --prefix www"
+  },
+  "author": "Irfan Arslan",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^6.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.8"
+  }
+}
