@@ -18,7 +18,7 @@ const WaveContextProvider = (props) => {
       const data = await axios.get("/api/data");
       dispatch({ type: GET_DATA, data: data.data });
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
   //Set Loading
@@ -37,7 +37,6 @@ const WaveContextProvider = (props) => {
       value={{
         data: state.data,
         loading: state.loading,
-        
       }}
     >
       {props.children}

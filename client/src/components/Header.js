@@ -18,7 +18,7 @@ const Header = () => {
       <div className={isActive ? "nav-links" : "nav-links active"}>
         <ul>
           <li>
-            <a href="/" target="blank">
+            <a href="#">
               Home
             </a>
           </li>

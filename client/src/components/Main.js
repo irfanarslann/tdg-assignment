@@ -4,16 +4,16 @@ import { WaveContext } from "../contexts/Wave/WaveContext";
 import Chart from "./Chart";
 const Main = () => {
   const { data, loading } = useContext(WaveContext);
-  
+
   return (
-    <div>
+    <div className="main">
       {loading && <h1> Loading...</h1>}
-      <h2>Charts</h2>
-      {data.sensor ? (
-        data.sensor.map((iter) => <Chart iter={iter} key={iter.name} />)
-      ) : (
-        <h1>Loading</h1>
-      )}
+      <div className="title">{!loading && <h2>Data Graphics</h2>}</div>
+      <div className="main-container">
+        {data.sensor
+          ? data.sensor.map((iter) => <Chart iter={iter} key={iter.name} />)
+          : ""}
+      </div>
     </div>
   );
 };

@@ -1,38 +1,44 @@
 import { useEffect } from "react";
 const Chart = ({ iter }) => {
-  const prepareChart = (datax) => {
+  const prepareChart = (iter) => {
     const dataArray = [];
-    const timeStamp = [];
-    for (let index = 0; index < datax.waveform.wf_values.length; index++) {
-      const element = datax.waveform.wf_values[index];
-      const time = datax.waveform.timestamp + datax.waveform.dt * index;
 
-      new Date(time).getTime();
+    for (let index = 0; index < iter.waveform.wf_values.length; index++) {
+      const element = iter.waveform.wf_values[index];
 
-      dataArray.push(element);
-      timeStamp.push(time);
+      const time = iter.waveform.timestamp; //;
+      const date = new Date(time);
+
+      var off = date.getTimezoneOffset();
+      var waveFormData = [
+        date.getTime() - off * 60 * 1000 + iter.waveform.dt * index,
+        element,
+      ];
+      
+      dataArray.push(waveFormData);
     }
-    console.log(timeStamp);
+
     //eslint-disable-next-line no-undef
-    Highcharts.chart(datax.name, {
+    Highcharts.chart(iter.name, {
       title: {
         text: null,
       },
 
       yAxis: {
         title: {
-          text: "Veri Ivmesi",
+          text: "Data Acceleration",
         },
       },
 
       xAxis: {
+        tickInterval: 60,
+        type: "datetime",
         title: {
           text: "Time",
-        },
-        labels: {
-          format: "{value:%M-%S}",
-          rotation: 45,
-          align: "left",
+          style: {
+            color: "#E0E0E3",
+            fontSize: "20px",
+          },
         },
       },
 
@@ -52,7 +58,7 @@ const Chart = ({ iter }) => {
       },
       series: [
         {
-          name: datax.name,
+          name: iter.name + " MAX : " + iter.max,
           data: dataArray,
         },
       ],
