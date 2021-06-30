@@ -42,5 +42,5 @@ ve route olusturdum. Route icerisinde elimdeki json dosyasini alip kontrolden so
 
 -Package.json dosyasina gerekli scriptleri ekledim (Heroku post-build , React ve Expressin ayni anda calismasini saglayan script vs.)
  
-
+Proje Canli linki : https://powerful-mountain-27095.herokuapp.com/
 
