@@ -1,4 +1,4 @@
-# DTG
+# TDG
 ### Projede kullanilan teknoloji ve diller:
 
 -Gelistirme dili olarak Javascript kullanildi.
